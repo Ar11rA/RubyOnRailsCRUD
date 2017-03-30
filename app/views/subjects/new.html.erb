@@ -1,0 +1,7 @@
+<h1>Create Subject</h1>
+<%= form_for(@subject) do |f|%>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <%= f.text_field :code, placeholder: "Code" %>
+  <%= f.text_field :credits, placeholder: "Credits" %>
+  <%= f.submit("Create") %>
+<% end %>
