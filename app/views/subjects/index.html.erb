@@ -1,20 +1,2 @@
-<h1>Subjects</h1>
-<%=link_to("Add new", new_subject_path, :class => 'action show')%>
-<table>
-  <tr>
-    <th>#</th>
-    <th>Name</th>
-    <th>Course Code</th>
-    <th>Credits</th>
-  </tr>
-  <% @subjects.each do |subject|%>
-  <tr>
-    <td><%= subject.id %></td>
-    <td><%= subject.name %></td>
-    <td><%= subject.code %></td>
-    <td><%= subject.credits %></td>
-    <td><%=link_to("Show", subject_path(subject), :class => 'action show')%></td>
-    <td><%=link_to("Edit", edit_subject_path(subject), :class => 'action edit')%></td>
-    <td><%=link_to("Delete", delete_subject_path(subject), :class => 'action delete')%></td>
-  </tr>
-  <% end %>
+<h1>SUBJECTS</h1>
+<%= react_component('Subjects', subjects: @subjects)%>
