@@ -14,9 +14,9 @@ class SubjectsController < ApplicationController
   def create
     @subject = Subject.new(subject_params)
     if @subject.save
-      redirect_to(subjects_path)
+      render json: @subject
     else
-      render('new')
+      render json: @subject.errors, status: :unprocessable_entity
     end
   end
 
@@ -44,6 +44,6 @@ class SubjectsController < ApplicationController
   end
 
   def subject_params
-    params.require(:subject).permit(:name, :code, :credits)
+    params.permit(:name, :code, :credits)
   end
 end
