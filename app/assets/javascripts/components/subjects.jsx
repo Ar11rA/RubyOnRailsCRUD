@@ -6,7 +6,6 @@ class Subjects extends React.Component {
     }
   }
   saveSub(obj) {
-    console.log(obj)
     const data = { name: obj.name, code: obj.code, credits: obj.credits }
     var settings = {
       "async": true,
